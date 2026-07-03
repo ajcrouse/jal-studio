@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JAL Studio — The Joe 1x1 Large B</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<style>
+  :root { --bg:#14161a; --panel:#1d2026; --panel2:#242830; --line:#2b303b;
+          --ink:#e8e6e0; --muted:#8d94a0; --accent:#6ea8fe; }
+  * { box-sizing: border-box; }
+  html, body { height:100%; margin:0; background:var(--bg); color:var(--ink);
+    font:14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  #app { display:flex; flex-direction:column; height:100%; }
+
+  /* ---- top bar: variations + undo/redo + export/import ---- */
+  #appbar { display:flex; align-items:center; gap:8px; padding:8px 12px;
+    background:var(--panel); border-bottom:1px solid #000; flex:none; }
+  #appbar .brand { font-weight:700; font-size:14px; margin-right:6px; }
+  #appbar .brand small { color:var(--muted); font-weight:400; }
+  #appbar .gap { flex:1; }
+  select, input, button { font:inherit; color:var(--ink); background:var(--panel2);
+    border:1px solid var(--line); border-radius:8px; padding:6px 9px; }
+  button { cursor:pointer; }
+  button:hover { border-color:var(--accent); }
+  button:disabled { opacity:.4; cursor:default; }
+  button:disabled:hover { border-color:var(--line); }
+  #varSel { min-width:160px; }
+
+  #main { display:flex; flex:1; min-height:0; }
+
+  /* ---- left: 2D editor (library sidebar + plan stage) ---- */
+  #left { flex:1.05; display:flex; min-width:0; border-right:1px solid #000; }
+  #side { width:230px; min-width:200px; background:var(--panel);
+    border-right:1px solid var(--line); display:flex; flex-direction:column; overflow:auto; }
+  .sec { border-top:1px solid var(--line); padding:10px 12px; }
+  .sec:first-child { border-top:0; }
+  .sec h2 { font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); margin:0 0 8px; }
+  .lib { display:flex; flex-direction:column; gap:5px; }
+  .lib .item { display:flex; align-items:center; gap:8px; background:var(--panel2);
+    border:1px solid var(--line); border-radius:8px; padding:5px 8px; cursor:pointer; }
+  .lib .item:hover { border-color:var(--accent); }
+  .lib .swatch { width:14px; height:14px; border-radius:4px; flex:none; }
+  .lib .nm { flex:1; font-size:12px; }
+  .lib .dim { color:var(--muted); font-size:10px; flex:none; }
+  .hint { color:var(--muted); font-size:11.5px; margin-top:8px; }
+  .btnrow { display:flex; gap:6px; flex-wrap:wrap; }
+  .btnrow button { flex:1; min-width:0; }
+  .row { display:flex; gap:6px; align-items:center; margin-bottom:6px; }
+
+  #stage { flex:1; position:relative; overflow:auto;
+    background:#0b0d11 repeating-linear-gradient(0deg,transparent 0 39px,#141821 39px 40px),
+               #0b0d11 repeating-linear-gradient(90deg,transparent 0 39px,#141821 39px 40px); }
+  #stagebar { position:absolute; top:8px; left:50%; transform:translateX(-50%);
+    background:rgba(20,24,32,.92); border:1px solid var(--line); border-radius:10px;
+    padding:4px 10px; display:flex; gap:12px; align-items:center; z-index:200;
+    font-size:11px; color:var(--muted); white-space:nowrap; }
+  #stagebar b { color:var(--ink); }
+  #canvas { position:relative; margin:24px auto; box-shadow:0 10px 40px rgba(0,0,0,.5); background:#fff; }
+  #planimg { display:block; width:100%; height:100%; user-select:none;
+    -webkit-user-drag:none; pointer-events:none; }
+  .piece { position:absolute; border:1.5px solid rgba(0,0,0,.55); display:flex;
+    align-items:center; justify-content:center; text-align:center; cursor:grab;
+    box-shadow:0 1px 4px rgba(0,0,0,.25); border-radius:3px; overflow:hidden; }
+  .piece .plabel { font-size:10px; font-weight:600; color:#101010;
+    text-shadow:0 1px 0 rgba(255,255,255,.5); padding:2px; line-height:1.15; pointer-events:none; }
+  .piece.sel { outline:2px solid var(--accent); outline-offset:1px; z-index:50; }
+  .piece .rot { position:absolute; top:-11px; right:-11px; width:20px; height:20px;
+    border-radius:50%; background:var(--accent); color:#001; display:none;
+    align-items:center; justify-content:center; font-size:12px; cursor:grab; }
+  .piece.sel .rot { display:flex; }
+  .piece .delx { position:absolute; top:-11px; left:-11px; width:20px; height:20px;
+    border-radius:50%; background:#e05555; color:#fff; display:none;
+    align-items:center; justify-content:center; font-size:11px; font-weight:700;
+    cursor:pointer; }
+  .piece.sel .delx { display:flex; }
+  kbd { background:var(--panel2); border:1px solid var(--line); border-bottom-width:2px;
+    border-radius:4px; padding:0 5px; font-size:11px; }
+
+  /* ---- right: the three.js viewport ---- */
+  #viewport { flex:1; position:relative; min-width:0; }
+  #viewport canvas { display:block; }
+  #hud { position:absolute; left:10px; bottom:10px; color:var(--dim, #8d94a0);
+    font-size:11px; pointer-events:none; text-shadow:0 1px 2px #000; }
+  #warnings { position:absolute; right:10px; top:10px; max-width:320px;
+    font-size:11px; color:#e8b96a; }
+  #walkBtn { position:absolute; left:10px; top:10px; z-index:10;
+    background:rgba(29,32,38,.9); }
+  #warnings div { background:rgba(20,22,26,.85); border-radius:6px;
+    padding:4px 8px; margin-bottom:4px; }
+
+  /* ---- first-run help overlay ---- */
+  #introOverlay { position:fixed; inset:0; z-index:1000; display:flex;
+    align-items:center; justify-content:center; background:rgba(8,10,14,.72); }
+  #introOverlay.hidden { display:none; }
+  #introCard { background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:26px 30px; max-width:420px; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+  #introCard h1 { font-size:17px; margin:0 0 14px; }
+  #introCard ul { margin:0 0 18px; padding-left:20px; }
+  #introCard li { margin-bottom:9px; color:var(--ink); }
+  #introCard li b { color:var(--accent); }
+  #introGo { width:100%; padding:9px; font-weight:600; background:var(--accent);
+    color:#0a1626; border:none; }
+  #helpBtn { width:30px; padding:6px 0; text-align:center; font-weight:700; }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="app">
+  <div id="appbar">
+    <span class="brand">JAL Studio <small>· The Joe · 1x1 Large B</small></span>
+    <select id="varSel" title="Variation"></select>
+    <button id="saveAsBtn" title="Save the current arrangement as a named copy">Save as copy…</button>
+    <button id="renameBtn" title="Rename this variation">Rename</button>
+    <button id="delVarBtn" title="Delete this variation">Delete</button>
+    <span class="gap"></span>
+    <button id="undoBtn" title="Undo (⌘Z)">⌘Z Undo</button>
+    <button id="redoBtn" title="Redo (⇧⌘Z)">Redo</button>
+    <button id="exportJson" title="Download this variation as layout JSON (for Blender hero renders)">Export .json</button>
+    <button id="importJson" title="Load a layout JSON as a new variation">Import</button>
+    <button id="helpBtn" title="How to use JAL Studio">?</button>
+    <input id="fileIn" type="file" accept="application/json" style="display:none">
+  </div>
+
+  <div id="main">
+    <div id="left">
+      <div id="side">
+        <div class="sec">
+          <h2>Floor plan</h2>
+          <div class="hint" id="planInfo" style="margin-top:0"></div>
+        </div>
+        <div class="sec">
+          <h2>Furniture — click to drop in</h2>
+          <div class="lib" id="lib"></div>
+        </div>
+        <div class="sec">
+          <h2>Selected piece</h2>
+          <div id="selInfo" class="hint" style="margin-top:0">Nothing selected.</div>
+          <div class="row" style="margin-top:8px">
+            <input id="rotSlider" type="range" min="0" max="359" value="0" style="flex:3">
+            <input id="rotNum" type="number" min="0" max="359" step="1" value="0" style="flex:none;width:58px">
+            <span style="flex:none;color:var(--muted)">°</span>
+          </div>
+          <div class="btnrow">
+            <button id="rotM15">−15°</button><button id="rotP15">+15°</button>
+            <button id="rotL">⟲ 90°</button><button id="rotR">90° ⟳</button>
+          </div>
+          <div class="btnrow" style="margin-top:6px">
+            <button id="dupe">Duplicate</button>
+            <button id="del">Delete</button>
+            <button id="clearAll">Clear</button>
+          </div>
+          <div class="hint">Keys: <kbd>R</kbd>/<kbd>⇧R</kbd> rotate · <kbd>[</kbd> <kbd>]</kbd> 90°
+            · arrows nudge · <kbd>⌫</kbd> delete · <kbd>⌘D</kbd> duplicate · <kbd>⌘Z</kbd> undo.</div>
+        </div>
+      </div>
+      <div id="stage">
+        <div id="stagebar"></div>
+        <div id="canvas"><img id="planimg" alt="floor plan"></div>
+      </div>
+    </div>
+
+    <div id="viewport">
+      <button id="walkBtn" title="Walk around in first person — Esc exits">🚶 Walk</button>
+      <div id="warnings"></div>
+      <div id="hud">left-drag orbit &middot; scroll zoom &middot; right-drag pan</div>
+    </div>
+  </div>
+</div>
+
+<div id="introOverlay" class="hidden">
+  <div id="introCard">
+    <h1>Welcome to JAL Studio</h1>
+    <ul>
+      <li><b>Click</b> a furniture item in the library to add it to the plan.</li>
+      <li><b>Drag</b> a piece to move it — <kbd>⌘Z</kbd> undoes anything.</li>
+      <li><b>Drag the 3D view</b> to look around · scroll to zoom.</li>
+    </ul>
+    <button id="introGo">Got it — let's arrange</button>
+  </div>
+</div>
+
+<script>
+  // First-run help overlay: shown once (localStorage flag); "?" re-opens it.
+  // Plain script (not the module) so help works even if the 3D app fails to boot.
+  (function () {
+    var KEY = "jal_app_intro_seen";
+    var ov = document.getElementById("introOverlay");
+    var show = function () { ov.classList.remove("hidden"); };
+    var hide = function () {
+      ov.classList.add("hidden");
+      try { localStorage.setItem(KEY, "1"); } catch (e) {}
+    };
+    var seen = null;
+    try { seen = localStorage.getItem(KEY); } catch (e) {}
+    if (!seen) show();
+    document.getElementById("introGo").onclick = hide;
+    document.getElementById("helpBtn").onclick = show;
+    ov.addEventListener("pointerdown", function (e) { if (e.target === ov) hide(); });
+  })();
+</script>
+
+<script type="module">
+  import { Viewer3D } from "./js/viewer3d.js";
+  import { LayoutState } from "./js/state.js";
+  import { initEditor, PLAN, PLAN_SLUG } from "./js/editor.js";
+
+  const [manifest, golden] = await Promise.all([
+    fetch("./assets/manifest.json").then((r) => r.json()),
+    fetch("./test/golden_layout.json").then((r) => r.json()),
+  ]);
+
+  const viewer = new Viewer3D(document.getElementById("viewport"), { manifest });
+  const wbox = document.getElementById("warnings");
+  viewer.onWarning = (msg) => {
+    const d = document.createElement("div");
+    d.textContent = msg;
+    wbox.appendChild(d);
+  };
+
+  // walk mode (stretch): a button that toggles pointer-lock first-person
+  const walkBtn = document.getElementById("walkBtn");
+  const hud = document.getElementById("hud");
+  walkBtn.onclick = () => viewer.toggleWalk();
+  viewer.onWalkChange = (on) => {
+    walkBtn.textContent = on ? "Esc exits walk" : "🚶 Walk";
+    hud.textContent = on
+      ? "W/A/S/D or arrows move · mouse looks · Esc exits"
+      : "left-drag orbit · scroll zoom · right-drag pan";
+  };
+
+  // shared state: variations + undo/redo + autosave; first run seeds "Current"
+  // from the OLD studio's autosave if present, else from the golden layout.
+  const state = new LayoutState(PLAN_SLUG, PLAN.ppf);
+  state.init(golden.pieces);
+
+  const editor = initEditor({ state, manifest, viewer }); // renders 2D + first 3D sync
+
+  await viewer.loadEnv();           // the scan room (19 MB) loads underneath
+  await viewer.whenLoaded();        // holds the load event for headless shots
+
+  if (new URLSearchParams(location.search).get("view") === "top") viewer.topView();
+
+  // hooks for headless verification (scripts/phase3_check.mjs)
+  window.__viewer = viewer;
+  window.__state = state;
+  window.__editor = editor;
+  window.__ready = true;
+  document.title = "JAL Studio [ready]";
+</script>
+</body>
+</html>

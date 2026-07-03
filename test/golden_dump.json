@@ -1,0 +1,310 @@
+{
+  "layout": "app/test/golden_layout.json",
+  "source": "blender/render_layout.py placement path (runpy, --views none)",
+  "pieces": [
+    {
+      "index": 0,
+      "id": 4,
+      "name": "King bed (scan)",
+      "kind": "scan",
+      "object": "scan_King bed (scan)",
+      "location_ft": [
+        28.90058702684137,
+        18.829977105608762,
+        0.0
+      ],
+      "rot_z_deg": 0.0,
+      "h": 4.33,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 1,
+      "id": 5,
+      "name": "Axel Leather Sofa (89\")",
+      "kind": "scan",
+      "object": "scan_Axel Leather Sofa (89\")",
+      "location_ft": [
+        16.047180168272003,
+        11.902015040239949,
+        0.0
+      ],
+      "rot_z_deg": -180.00000500895632,
+      "h": 2.83,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 2,
+      "id": 8,
+      "name": "Cement table (scan)",
+      "kind": "scan",
+      "object": "scan_Cement table (scan)",
+      "location_ft": [
+        20.328553642813613,
+        13.60712558265746,
+        0.0
+      ],
+      "rot_z_deg": 0.0,
+      "h": 1.51,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 3,
+      "id": 10,
+      "name": "Guitar (scan)",
+      "kind": "scan",
+      "object": "scan_Guitar (scan)",
+      "location_ft": [
+        29.236059489212636,
+        2.044183532084067,
+        0.0
+      ],
+      "rot_z_deg": -209.99999901359323,
+      "h": 3.27,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 4,
+      "id": 11,
+      "name": "Accent chair (scan)",
+      "kind": "scan",
+      "object": "scan_Accent chair (scan)",
+      "location_ft": [
+        10.92826756905383,
+        20.245668769195635,
+        0.0
+      ],
+      "rot_z_deg": -324.9999896917463,
+      "h": 2.57,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 5,
+      "id": 12,
+      "name": "Piano (scan)",
+      "kind": "scan",
+      "object": "scan_Piano (scan)",
+      "location_ft": [
+        24.33010286546442,
+        9.22624520429476,
+        0.0
+      ],
+      "rot_z_deg": 90.00000250447816,
+      "h": 2.69,
+      "mount_z": 0.0,
+      "scan_rot": 90.0
+    },
+    {
+      "index": 6,
+      "id": 13,
+      "name": "Mirror column (2 ft)",
+      "kind": "mirror",
+      "object": "mirror_Mirror column (2 ft)",
+      "location_ft": [
+        20.010687234833483,
+        22.745631498301748,
+        0.0
+      ],
+      "rot_z_deg": 0.0,
+      "h": 8.0,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 7,
+      "id": 14,
+      "name": "Mirror column (2 ft)",
+      "kind": "mirror",
+      "object": "mirror_Mirror column (2 ft).001",
+      "location_ft": [
+        21.082028316387667,
+        21.85807296923139,
+        0.0
+      ],
+      "rot_z_deg": -270.00000068324533,
+      "h": 8.0,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 8,
+      "id": 15,
+      "name": "Mirror column (2 ft)",
+      "kind": "mirror",
+      "object": "mirror_Mirror column (2 ft).002",
+      "location_ft": [
+        15.811971792085902,
+        22.77304494161931,
+        0.0
+      ],
+      "rot_z_deg": 0.0,
+      "h": 8.0,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 9,
+      "id": 16,
+      "name": "Mirror column (2 ft)",
+      "kind": "mirror",
+      "object": "mirror_Mirror column (2 ft).003",
+      "location_ft": [
+        17.939754358426793,
+        22.74110248395464,
+        0.0
+      ],
+      "rot_z_deg": 0.0,
+      "h": 8.0,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 10,
+      "id": 17,
+      "name": "Mirror column (2 ft)",
+      "kind": "mirror",
+      "object": "mirror_Mirror column (2 ft).004",
+      "location_ft": [
+        21.09251623078594,
+        19.85054472925782,
+        0.0
+      ],
+      "rot_z_deg": -90.00000250447816,
+      "h": 8.0,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 11,
+      "id": 18,
+      "name": "Tapestry (4 ft)",
+      "kind": "box",
+      "object": "F_Tapestry (4 ft)",
+      "location_ft": [
+        28.97972509929827,
+        22.77018360578482,
+        4.7100000963436335
+      ],
+      "rot_z_deg": 0.0,
+      "h": 1.62,
+      "mount_z": 3.9,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 12,
+      "id": 21,
+      "name": "Dining table (scan)",
+      "kind": "scan",
+      "object": "scan_Dining table (scan)",
+      "location_ft": [
+        7.061964570693769,
+        16.565984628331943,
+        0.0
+      ],
+      "rot_z_deg": -90.00000250447816,
+      "h": 2.6,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 13,
+      "id": 23,
+      "name": "Chaise lounge",
+      "kind": "chaise",
+      "object": "chaise_Chaise lounge",
+      "location_ft": [
+        36.203889396246964,
+        2.416943510373433,
+        0.0
+      ],
+      "rot_z_deg": -180.00000500895632,
+      "h": 2.833,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 14,
+      "id": 24,
+      "name": "Photo wall (scan)",
+      "kind": "scan",
+      "object": "scan_Photo wall (scan)",
+      "location_ft": [
+        21.128097544192016,
+        14.54031530014799,
+        1.4999999696501283
+      ],
+      "rot_z_deg": -90.00000250447816,
+      "h": 7.26,
+      "mount_z": 1.5,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 15,
+      "id": 25,
+      "name": "Shelf (scan)",
+      "kind": "scan",
+      "object": "scan_Shelf (scan)",
+      "location_ft": [
+        20.45827274873188,
+        18.558542872351296,
+        0.0
+      ],
+      "rot_z_deg": -90.00000250447816,
+      "h": 3.98,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 16,
+      "id": 26,
+      "name": "Cement table (scan)",
+      "kind": "scan",
+      "object": "scan_Cement table (scan).001",
+      "location_ft": [
+        12.8704027866754,
+        20.98457863324583,
+        0.0
+      ],
+      "rot_z_deg": 0.0,
+      "h": 1.51,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 17,
+      "id": 27,
+      "name": "Shelf (scan)",
+      "kind": "scan",
+      "object": "scan_Shelf (scan).001",
+      "location_ft": [
+        16.87294698449883,
+        22.172718223311456,
+        0.0
+      ],
+      "rot_z_deg": 0.0,
+      "h": 3.98,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    },
+    {
+      "index": 18,
+      "id": 28,
+      "name": "walnut_etagere",
+      "kind": "etagere",
+      "object": "etag_walnut_etagere",
+      "location_ft": [
+        35.914298430515395,
+        6.214044303718827,
+        0.0
+      ],
+      "rot_z_deg": -180.00000500895632,
+      "h": 6.63,
+      "mount_z": 0.0,
+      "scan_rot": 0.0
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "generated": "2026-07-03",
+  "units": "feet (w/d/h, mount_z); GLBs in meters, +Y up, origin at bottom-center",
+  "env": {
+    "file": "scan_room.glb",
+    "cut_ft": 9.3,
+    "offset_ft": [
+      19.67,
+      11.14,
+      0.16
+    ],
+    "interior_w": 39.85,
+    "interior_d": 23.55
+  },
+  "items": {
+    "King bed (scan)": {
+      "file": "king_bed_scan.glb",
+      "w": 7.51,
+      "d": 7.56,
+      "h": 4.33,
+      "mount_z": 0.0,
+      "kind": "scan",
+      "color": "#9575cd"
+    },
+    "Cement table (scan)": {
+      "file": "cement_table_scan.glb",
+      "w": 1.39,
+      "d": 1.42,
+      "h": 1.51,
+      "mount_z": 0.0,
+      "kind": "scan",
+      "color": "#9e9e94"
+    },
+    "Axel Leather Sofa (89\")": {
+      "file": "axel_leather_sofa_89.glb",
+      "w": 7.42,
+      "d": 2.96,
+      "h": 2.83,
+      "mount_z": 0.0,
+      "kind": "scan",
+      "color": "#7c5230"
+    },
+    "Accent chair (scan)": {
+      "file": "accent_chair_scan.glb",
+      "w": 2.55,
+      "d": 3.01,
+      "h": 2.57,
+      "mount_z": 0.0,
+      "kind": "scan",
+      "color": "#d98a4a"
+    },
+    "Dining table (scan)": {
+      "file": "dining_table_scan.glb",
+      "w": 3.91,
+      "d": 4.81,
+      "h": 2.6,
+      "mount_z": 0.0,
+      "kind": "scan",
+      "color": "#9c7a52"
+    },
+    "Guitar (scan)": {
+      "file": "guitar_scan.glb",
+      "w": 1.65,
+      "d": 1.89,
+      "h": 3.27,
+      "mount_z": 0.0,
+      "kind": "scan",
+      "color": "#8d6e63"
+    },
+    "Piano (scan)": {
+      "file": "piano_scan.glb",
+      "w": 4.56,
+      "d": 1.17,
+      "h": 2.69,
+      "mount_z": 0.0,
+      "kind": "scan",
+      "color": "#3b3b40"
+    },
+    "Shelf (scan)": {
+      "file": "shelf_scan.glb",
+      "w": 8.38,
+      "d": 1.18,
+      "h": 3.98,
+      "mount_z": 0.0,
+      "kind": "scan",
+      "color": "#7d6a52"
+    },
+    "Photo wall (scan)": {
+      "file": "photo_wall_scan.glb",
+      "w": 9.46,
+      "d": 0.41,
+      "h": 7.26,
+      "mount_z": 1.5,
+      "kind": "scan",
+      "color": "#8a7a63"
+    },
+    "walnut_etagere": {
+      "file": "walnut_etagere.glb",
+      "w": 5.68,
+      "d": 1.5,
+      "h": 6.63,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#4a2e18"
+    },
+    "bookshelf_divider": {
+      "file": "bookshelf_divider.glb",
+      "w": 8.17,
+      "d": 1.04,
+      "h": 5.5,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#3d2314"
+    },
+    "Mirror column (2 ft)": {
+      "file": "mirror_column_2_ft.glb",
+      "w": 2.0,
+      "d": 0.06,
+      "h": 8.0,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#b8a98a"
+    },
+    "Chaise lounge": {
+      "file": "chaise_lounge.glb",
+      "w": 6.0,
+      "d": 2.917,
+      "h": 2.833,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#dcd6c8"
+    },
+    "Tapestry (4 ft)": {
+      "file": "tapestry_4_ft.glb",
+      "w": 4.0,
+      "d": 0.05,
+      "h": 1.62,
+      "mount_z": 3.9,
+      "kind": "box",
+      "color": "#c2521f"
+    },
+    "Coffee table": {
+      "file": "coffee_table.glb",
+      "w": 4.0,
+      "d": 2.0,
+      "h": 1.5,
+      "mount_z": 0.0,
+      "kind": "box",
+      "color": "#bcaaa4"
+    },
+    "TV / media console": {
+      "file": "tv_media_console.glb",
+      "w": 5.0,
+      "d": 1.5,
+      "h": 2.0,
+      "mount_z": 0.0,
+      "kind": "box",
+      "color": "#90a4ae"
+    },
+    "Dining table (4)": {
+      "file": "dining_table_4.glb",
+      "w": 3.5,
+      "d": 3.5,
+      "h": 2.5,
+      "mount_z": 0.0,
+      "kind": "box",
+      "color": "#a1887f"
+    },
+    "Desk": {
+      "file": "desk.glb",
+      "w": 5.0,
+      "d": 2.5,
+      "h": 2.5,
+      "mount_z": 0.0,
+      "kind": "box",
+      "color": "#7986cb"
+    }
+  }
+}
