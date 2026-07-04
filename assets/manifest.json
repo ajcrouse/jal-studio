@@ -159,8 +159,8 @@
     },
     "Walnut nightstand (candidate)": {
       "file": "walnut_nightstand_candidate.glb",
-      "w": 1.83,
-      "d": 1.33,
+      "w": 1.33,
+      "d": 1.17,
       "h": 2.0,
       "mount_z": 0.0,
       "kind": "parametric",
