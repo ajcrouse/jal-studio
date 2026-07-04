@@ -210,6 +210,15 @@
       "mount_z": 0.0,
       "kind": "box",
       "color": "#7986cb"
+    },
+    "Grand Sienna rug 9x12 (candidate)": {
+      "file": "grand_sienna_rug_9x12_candidate.glb",
+      "w": 12.0,
+      "d": 9.0,
+      "h": 0.05,
+      "mount_z": 0.24,
+      "kind": "box",
+      "color": "#A34A28"
     }
   }
 }
