@@ -219,6 +219,51 @@
       "mount_z": 0.24,
       "kind": "box",
       "color": "#A34A28"
+    },
+    "Fold-out island (candidate)": {
+      "file": "fold_out_island_candidate.glb",
+      "w": 4.4,
+      "d": 1.63,
+      "h": 3.0,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#9aa0a3"
+    },
+    "Secretary desk (candidate)": {
+      "file": "secretary_desk_candidate.glb",
+      "w": 3.17,
+      "d": 1.58,
+      "h": 3.5,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#4a2417"
+    },
+    "Rolling TV stand (candidate)": {
+      "file": "rolling_tv_stand_candidate.glb",
+      "w": 4.0,
+      "d": 1.76,
+      "h": 4.29,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#1c1c1e"
+    },
+    "Counter stool (candidate)": {
+      "file": "counter_stool_candidate.glb",
+      "w": 1.25,
+      "d": 1.25,
+      "h": 2.08,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#8a6a3e"
+    },
+    "Teak bar credenza (candidate)": {
+      "file": "teak_bar_credenza_candidate.glb",
+      "w": 5.13,
+      "d": 1.48,
+      "h": 2.6,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#5a3a1e"
     }
   }
 }
