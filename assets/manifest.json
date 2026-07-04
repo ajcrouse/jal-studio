@@ -139,6 +139,33 @@
       "kind": "box",
       "color": "#c2521f"
     },
+    "Gold curtain wall (candidate)": {
+      "file": "gold_curtain_wall_candidate.glb",
+      "w": 9.55,
+      "d": 0.45,
+      "h": 10.4,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#A98743"
+    },
+    "Folding screen (candidate)": {
+      "file": "folding_screen_candidate.glb",
+      "w": 5.3,
+      "d": 1.15,
+      "h": 6.0,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#2b1a10"
+    },
+    "Walnut nightstand (candidate)": {
+      "file": "walnut_nightstand_candidate.glb",
+      "w": 1.83,
+      "d": 1.33,
+      "h": 2.0,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#5A4632"
+    },
     "Coffee table": {
       "file": "coffee_table.glb",
       "w": 4.0,
