@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-03",
+  "generated": "2026-07-04",
   "units": "feet (w/d/h, mount_z); GLBs in meters, +Y up, origin at bottom-center",
   "env": {
     "file": "scan_room.glb",
