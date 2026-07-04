@@ -166,6 +166,15 @@
       "kind": "parametric",
       "color": "#5A4632"
     },
+    "Chiltern rug 9x12 (candidate)": {
+      "file": "chiltern_rug_9x12_candidate.glb",
+      "w": 12.0,
+      "d": 9.0,
+      "h": 0.04,
+      "mount_z": 0.0,
+      "kind": "box",
+      "color": "#A9522E"
+    },
     "Coffee table": {
       "file": "coffee_table.glb",
       "w": 4.0,
