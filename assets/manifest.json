@@ -101,7 +101,7 @@
       "h": 6.63,
       "mount_z": 0.0,
       "kind": "parametric",
-      "color": "#4a2e18"
+      "color": "#5C4732"
     },
     "bookshelf_divider": {
       "file": "bookshelf_divider.glb",
@@ -110,7 +110,7 @@
       "h": 5.5,
       "mount_z": 0.0,
       "kind": "parametric",
-      "color": "#3d2314"
+      "color": "#5A462F"
     },
     "Mirror column (2 ft)": {
       "file": "mirror_column_2_ft.glb",
@@ -137,7 +137,7 @@
       "h": 1.62,
       "mount_z": 3.9,
       "kind": "box",
-      "color": "#c2521f"
+      "color": "#BC4B44"
     },
     "Gold curtain wall (candidate)": {
       "file": "gold_curtain_wall_candidate.glb",
@@ -164,7 +164,7 @@
       "h": 2.0,
       "mount_z": 0.0,
       "kind": "parametric",
-      "color": "#5A4632"
+      "color": "#4E3626"
     },
     "Chiltern rug 9x12 (candidate)": {
       "file": "chiltern_rug_9x12_candidate.glb",
@@ -173,7 +173,7 @@
       "h": 0.04,
       "mount_z": 0.24,
       "kind": "box",
-      "color": "#A9522E"
+      "color": "#7B5230"
     },
     "Coffee table": {
       "file": "coffee_table.glb",
@@ -209,7 +209,7 @@
       "h": 2.5,
       "mount_z": 0.0,
       "kind": "box",
-      "color": "#7986cb"
+      "color": "#7A5C3E"
     },
     "Grand Sienna rug 9x12 (candidate)": {
       "file": "grand_sienna_rug_9x12_candidate.glb",
@@ -218,7 +218,7 @@
       "h": 0.05,
       "mount_z": 0.24,
       "kind": "box",
-      "color": "#A34A28"
+      "color": "#A94A33"
     },
     "Fold-out island (candidate)": {
       "file": "fold_out_island_candidate.glb",
@@ -227,7 +227,7 @@
       "h": 3.0,
       "mount_z": 0.0,
       "kind": "parametric",
-      "color": "#9aa0a3"
+      "color": "#ABAEB0"
     },
     "Secretary desk (candidate)": {
       "file": "secretary_desk_candidate.glb",
@@ -236,7 +236,7 @@
       "h": 3.5,
       "mount_z": 0.0,
       "kind": "parametric",
-      "color": "#4a2417"
+      "color": "#43220F"
     },
     "Rolling TV stand (candidate)": {
       "file": "rolling_tv_stand_candidate.glb",
@@ -254,7 +254,7 @@
       "h": 2.08,
       "mount_z": 0.0,
       "kind": "parametric",
-      "color": "#8a6a3e"
+      "color": "#A9814F"
     },
     "Teak bar credenza (candidate)": {
       "file": "teak_bar_credenza_candidate.glb",
@@ -263,7 +263,7 @@
       "h": 2.6,
       "mount_z": 0.0,
       "kind": "parametric",
-      "color": "#5a3a1e"
+      "color": "#AE7B42"
     },
     "Cow stool (candidate)": {
       "file": "cow_stool_candidate.glb",
@@ -272,7 +272,7 @@
       "h": 1.34,
       "mount_z": 0.0,
       "kind": "parametric",
-      "color": "#b9b9bd"
+      "color": "#D6D3CA"
     },
     "Stone coffee table (candidate)": {
       "file": "stone_coffee_table_candidate.glb",
