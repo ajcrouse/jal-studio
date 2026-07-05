@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-04",
+  "generated": "2026-07-05",
   "units": "feet (w/d/h, mount_z); GLBs in meters, +Y up, origin at bottom-center",
   "env": {
     "file": "scan_room.glb",
@@ -264,6 +264,24 @@
       "mount_z": 0.0,
       "kind": "parametric",
       "color": "#5a3a1e"
+    },
+    "Cow stool (candidate)": {
+      "file": "cow_stool_candidate.glb",
+      "w": 1.28,
+      "d": 1.28,
+      "h": 1.34,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#b9b9bd"
+    },
+    "Stone coffee table (candidate)": {
+      "file": "stone_coffee_table_candidate.glb",
+      "w": 2.3,
+      "d": 2.3,
+      "h": 0.98,
+      "mount_z": 0.0,
+      "kind": "parametric",
+      "color": "#e8e6e0"
     }
   }
 }
