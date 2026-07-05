@@ -276,12 +276,12 @@
     },
     "Stone coffee table (candidate)": {
       "file": "stone_coffee_table_candidate.glb",
-      "w": 2.3,
-      "d": 2.3,
+      "w": 3.28,
+      "d": 3.28,
       "h": 0.98,
       "mount_z": 0.0,
       "kind": "parametric",
-      "color": "#e8e6e0"
+      "color": "#2A2A2D"
     }
   }
 }
